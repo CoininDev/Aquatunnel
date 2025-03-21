@@ -11,11 +11,13 @@ public class Entity {
     public Entity(Space space, params Component[] components) {
         this.Space = space;
         this.Components = components;
+        assignComponents();
     }
 
     public Entity(params Component[] components) {
         this.Space = new(0,0,1,1,0);
         this.Components = components;
+        assignComponents();
     }
 
     public void Init() {
@@ -43,6 +45,12 @@ public class Entity {
     public void AddComponent(Component comp) {
         if (comp == null) return;
         Components.Add(comp);
+    }
+
+    private void assignComponents(){
+        foreach(var comp in this.Components) {
+            comp.Entity = this;
+        }
     }
 }
 
