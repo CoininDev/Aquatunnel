@@ -7,7 +7,7 @@ namespace Aquatunnel;
 public class Scene {
     public List<Entity> Entities;
 
-    public Scene(List<Entity> entities) {
+    public Scene(params Entity[] entities) {
         this.Entities = entities;
     }
 
