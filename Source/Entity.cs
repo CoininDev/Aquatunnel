@@ -54,7 +54,7 @@ public class Entity {
     }
 }
 
-public struct Space {
+public class Space {
     public Vector2 Position;
     public Vector2 Scale;
     public float Rotation;
