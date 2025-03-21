@@ -8,7 +8,13 @@ public class Entity {
     public Space Space;
     public List<Component> Components;
     
-    public Entity(List<Component> components) {
+    public Entity(Space space, params Component[] components) {
+        this.Space = space;
+        this.Components = components;
+    }
+
+    public Entity(params Component[] components) {
+        this.Space = new(0,0,1,1,0);
         this.Components = components;
     }
 
