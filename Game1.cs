@@ -19,7 +19,12 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        
+        Scene s = new(
+            new Entity(
+                new SpriteComp("diver1"),
+            ),
+        );
+        currentScene = s;
 
         base.Initialize();
     }
@@ -28,6 +33,7 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        currentScene.Init(this);
     }
 
     protected override void Update(GameTime gameTime)
@@ -35,7 +41,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
-
+        currentScene.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -45,7 +51,7 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         _spriteBatch.Begin();
-        _spriteBatch.Draw(textura, posicao, Color.White);
+        currentScene.Draw(_spriteBatch);
         _spriteBatch.End();
 
         base.Draw(gameTime);
