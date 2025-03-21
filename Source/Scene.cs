@@ -6,12 +6,15 @@ namespace Aquatunnel;
 
 public class Scene {
     public List<Entity> Entities;
+    public Game Game;
 
     public Scene(params Entity[] entities) {
         this.Entities = entities;
     }
 
-    public void Init() {
+    public void Init(Game game) {
+        this.Game = game;
+        
         foreach(Entity entity in Entities){
             entity.Init();
         }
