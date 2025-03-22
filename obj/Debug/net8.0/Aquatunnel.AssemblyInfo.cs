@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aquatunnel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a15fd751b9d6d230f3c78996267306e9aafe5407")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aquatunnel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aquatunnel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,7 +22,8 @@ public class Game1 : Game
         Scene s = new(
             new Entity(
                 new SpriteComp("diver1"),
-            ),
+                new PlayerComp()
+            )
         );
         currentScene = s;
 
@@ -41,7 +42,7 @@ public class Game1 : Game
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
         
-        currentScene.Update(gameTime);
+        currentScene.Step(gameTime);
 
         base.Update(gameTime);
     }

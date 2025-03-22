@@ -9,14 +9,14 @@ public class Scene {
     public Game Game;
 
     public Scene(params Entity[] entities) {
-        this.Entities = entities;
+        this.Entities = new List<Entity>(entities);
     }
 
     public void Init(Game game) {
         this.Game = game;
         
         foreach(Entity entity in Entities){
-            entity.Init();
+            entity.Init(this);
         }
     }
 

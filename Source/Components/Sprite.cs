@@ -12,11 +12,20 @@ public class SpriteComp : Component{
     }
 
     public override void Init() {
-        Entity.Game.Load<Texture2D>(this.TextureName);
+        this.Texture = Entity.Scene.Game.Content.Load<Texture2D>(this.TextureName);
     }
     
     public override void Draw(SpriteBatch batch) {
-        batch.Draw(Texture, entity.Space.Scale, Color.White);
+        batch.Draw(
+            Texture, 
+            Entity.Space.Position, 
+            null, 
+            Color.White, 
+            Entity.Space.Rotation, 
+            Vector2.Zero, 
+            Entity.Space.Scale, 
+            SpriteEffects.None, 0
+        );
     }
     
     public override void Update(GameTime time) {}

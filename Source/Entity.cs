@@ -7,20 +7,23 @@ namespace Aquatunnel;
 public class Entity {
     public Space Space;
     public List<Component> Components;
+    public Scene Scene;
     
     public Entity(Space space, params Component[] components) {
         this.Space = space;
-        this.Components = components;
-        assignComponents();
+        this.Components = new List<Component>(components);
+        foreach(var comp in this.Components) {
+           comp.Entity = this;
+        }
     }
 
-    public Entity(params Component[] components) {
-        this.Space = new(0,0,1,1,0);
-        this.Components = components;
-        assignComponents();
-    }
+    public Entity(params Component[] components) 
+    : this(new Space(0,0,1,1,0), components)
+    {}
 
-    public void Init() {
+    public void Init(Scene scene) {
+        this.Scene = scene;
+
         foreach(Component comp in this.Components) {
             comp.Init();
         }
@@ -48,9 +51,7 @@ public class Entity {
     }
 
     private void assignComponents(){
-        foreach(var comp in this.Components) {
-            comp.Entity = this;
-        }
+        
     }
 }
 

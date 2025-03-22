@@ -24,3 +24,5 @@
 /home/gaybe/Documentos/Prog/C#/Monogames/Aquatunnel/obj/Debug/net8.0/Aquatunnel.pdb
 /home/gaybe/Documentos/Prog/C#/Monogames/Aquatunnel/obj/Debug/net8.0/Aquatunnel.genruntimeconfig.cache
 /home/gaybe/Documentos/Prog/C#/Monogames/Aquatunnel/obj/Debug/net8.0/ref/Aquatunnel.dll
+/home/gaybe/Documentos/Prog/C#/Monogames/Aquatunnel/obj/Debug/net8.0/Aquatunnel.sourcelink.json
+/home/gaybe/Documentos/Prog/C#/Monogames/Aquatunnel/bin/Debug/net8.0/FarseerPhysics MonoGame.dll
