@@ -6,7 +6,7 @@ use nalgebra::Vector2;
 
 use crate::{
     comps::{AnimationPlayer, DynamicBody, Player, Spritesheet, Transform},
-    game::Time,
+    game2::Time,
     input::InputContext,
     physics::PhysicsContext,
 };
@@ -18,10 +18,10 @@ pub fn time_update(#[resource] time: &mut Time) {
     time.last = now;
 }
 
-#[system]
-pub fn input_update(#[resource] input: &mut InputContext) {
-    input.update();
-}
+// #[system]
+// pub fn input_update(#[resource] input: &mut InputContext) {
+//     input.update();
+// }
 
 #[system(for_each)]
 pub fn step_animation(

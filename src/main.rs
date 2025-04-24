@@ -1,13 +1,11 @@
 mod comps;
 mod entitites;
-mod game;
 mod input;
 mod physics;
-mod window;
+mod game2;
 mod sys;
+mod window;
 
 fn main() {
-    if let Err(err) = game::run_game() {
-        println!("{}", err);
-    }
+    miniquad::start(miniquad::conf::Conf::default(), || Box::new(game2::Game::default()));
 }

@@ -7,7 +7,7 @@ use crate::{
     entitites::populate,
     input::{InputContext, InputSetup},
     physics::PhysicsContext,
-    window::init_sdl,
+    game2::init_sdl,
     sys::{
         load::{load_physics_system, load_spritesheet_system, load_system},
         render, tick,
@@ -39,8 +39,8 @@ pub fn run_game() -> Result<(), String> {
     resources.insert(canvas);
     resources.insert(texture_creator);
     resources.insert(input_ctx);
-    resources.insert(physics_ctx);
     resources.insert(ttf_ctx);
+    resources.insert(physics_ctx);
     resources.insert(time);
     resources.insert(CommandBuffer::new(&world));
 
